@@ -1,23 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-<title>Welcome to nginx!</title>
-<style>
-html { color-scheme: light dark; }
-body { width: 35em; margin: 0 auto;
-font-family: Tahoma, Verdana, Arial, sans-serif; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Index 페이지</title>
+  <style>
+    body {
+      background-color: #f7f7f7;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding-top: 150px;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-<h1>Welcome to nginx! Test</h1>
-<p>If you see this page, the nginx web server is successfully installed and
-working. Further configuration is required.</p>
+  <h1>이 페이지는 Index 페이지 입니다.</h1>
+  <p>로그인을 진행하려면 아래 버튼을 눌러주세요.</p>
+  <button onclick="goLogin()">로그인 페이지로 이동</button>
 
-<p>For online documentation and support please refer to
-<a href="http://nginx.org/">nginx.org</a>.<br/>
-Commercial support is available at
-<a href="http://nginx.com/">nginx.com</a>.</p>
-
-<p><em>Thank you for using nginx.</em></p>
+  <script>
+    function goLogin() {
+      // login.html 페이지로 이동
+      window.location.href = "login.html";
+    }
+  </script>
 </body>
 </html>

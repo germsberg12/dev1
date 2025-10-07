@@ -54,6 +54,32 @@
     <p id="message" style="color:red; margin-top:10px;"></p>
   </div>
 
+  <!-- pages/login.html 의 스크립트 예시 -->
+  <script>
+    async function login() {
+      const id = document.getElementById("username").value.trim();
+      const pw = document.getElementById("password").value;
+  
+      // (임시) 로컬 검증: admin / 1234
+      // 실제 운영에서는 fetch('/myapp/api/login') 사용
+      const ok = (id === "admin" && pw === "1234");
+  
+      if (ok) {
+        // 로그인 정보 저장 (최소한의 정보)
+        sessionStorage.setItem("authUser", JSON.stringify({
+          id,
+          name: "관리자",        // 실제론 서버 응답 사용
+          loginAt: new Date().toISOString()
+        }));
+        // 메인으로 이동
+        window.location.href = "../pages/main.html";
+      } else {
+        document.getElementById("message").textContent = "아이디/비밀번호가 틀렸습니다.";
+      }
+    }
+  </script>
+
+
   <script>
     function login() {
       const id = document.getElementById("username").value;
@@ -68,5 +94,7 @@
       }
     }
   </script>
+
+  
 </body>
 </html>
